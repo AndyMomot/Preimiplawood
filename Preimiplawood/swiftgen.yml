@@ -1,0 +1,22 @@
+xcassets:
+  - inputs:
+    - Preimiplawood/Resources/Images
+    outputs:
+      - templateName: swift5
+        output: Preimiplawood/Resources/Images/Images.generated.swift
+  - inputs:
+    - Preimiplawood/Resources/Colors/Colors.xcassets
+    outputs:
+      - templateName: swift5
+        output: Preimiplawood/Resources/Colors/Colors.generated.swift
+        params:
+          enumName: Colors
+          
+fonts:
+  - inputs: Preimiplawood/Resources/Fonts
+    outputs:
+    - templateName: swift5
+      output: Preimiplawood/Resources/Fonts/Fonts.generated.swift
+      params:
+        enumName: Fonts
+

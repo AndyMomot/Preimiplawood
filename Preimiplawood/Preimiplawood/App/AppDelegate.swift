@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Preimiplawood
+//  Libarorent
 //
-//  Created by Andrii Momot on 06.11.2024.
+//  Created by Andrii Momot on 06.10.2024.
 //
 
 import UIKit
