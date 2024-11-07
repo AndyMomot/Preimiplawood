@@ -35,7 +35,7 @@ struct OnboardingView: View {
                             }
                             
                             if item == .third {
-                                viewModel.showMainFlow(rootViewModel: rootViewModel)
+                                viewModel.showAuthView.toggle()
                             }
                         } label: {
                             Text("Dalej")
@@ -85,15 +85,17 @@ struct OnboardingView: View {
                 .cornerRadius(48, corners: .allCorners)
                 .padding(.horizontal, 31)
                 
-                Button {
-                    withAnimation {
-                        currentPageIndex = item.max
+                if currentPageIndex < item.max {
+                    Button {
+                        withAnimation {
+                            currentPageIndex = item.max
+                        }
+                    } label: {
+                        Text("Pominąć")
+                            .foregroundStyle(.white)
+                            .font(Fonts.SFProDisplay.regular.swiftUIFont(size: 16))
+                            .padding()
                     }
-                } label: {
-                    Text("Pominąć")
-                        .foregroundStyle(.white)
-                        .font(Fonts.SFProDisplay.regular.swiftUIFont(size: 16))
-                        .padding()
                 }
             }
             .padding(.vertical)
@@ -101,6 +103,9 @@ struct OnboardingView: View {
         }
         .sheet(isPresented: $viewModel.showPrivacyPolicy) {
             SwiftUIViewWebView(url: viewModel.privacyPolicyURL)
+        }
+        .fullScreenCover(isPresented: $viewModel.showAuthView) {
+            AuthView()
         }
     }
 }

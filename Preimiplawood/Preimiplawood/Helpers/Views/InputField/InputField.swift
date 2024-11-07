@@ -13,34 +13,41 @@ struct InputField: View {
     @Binding var text: String
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 11) {
             Text(title)
-                .foregroundStyle(Colors.blackCustom.swiftUIColor)
-                .font(Fonts.SFProDisplay.regular.swiftUIFont(size: 12))
+                .foregroundStyle(Colors.darkBlue.swiftUIColor)
+                .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 16))
             
-            VStack(alignment: .leading, spacing: 4) {
-                TextField(text: $text) {
-                    if let placeholder {
-                        Text(placeholder)
-                            .foregroundStyle(Colors.darkGrey.swiftUIColor)
-                            .font(Fonts.SFProDisplay.regular.swiftUIFont(size: 14))
-                            .opacity(0.8)
-                    }
+            TextField(text: $text) {
+                if let placeholder {
+                    Text(placeholder)
+                        .foregroundStyle(Colors.darkGrey.swiftUIColor)
+                        .font(Fonts.SFProDisplay.lightItalic.swiftUIFont(size: 16))
+                        .opacity(0.8)
                 }
-                .foregroundStyle(Colors.darkGrey.swiftUIColor)
-                .font(Fonts.SFProDisplay.regular.swiftUIFont(size: 14))
-                
-                Rectangle()
-                    .foregroundStyle(Colors.darkGrey.swiftUIColor)
-                    .opacity(0.5)
-                    .frame(height: 1)
             }
-            
+            .foregroundStyle(Colors.darkBlue.swiftUIColor)
+            .font(Fonts.SFProDisplay.regular.swiftUIFont(size: 16))
+            .padding(.horizontal, 12)
+            .padding(.vertical, 28)
+            .overlay {
+                RoundedRectangle(cornerRadius: 15)
+                    .stroke(Colors.darkBlue.swiftUIColor, lineWidth: 1)
+            }
         }
     }
 }
 
 #Preview {
-    InputField(title: "Typ", text: .constant(""))
-        .padding()
+    VStack(spacing: 20) {
+        InputField(title: "Email",
+                   placeholder: "Twój email",
+                   text: .constant(""))
+        
+        InputField(title: "Email",
+                   placeholder: "Twój email",
+                   text: .constant("Some@email.com"))
+        
+    }
+    .padding()
 }
