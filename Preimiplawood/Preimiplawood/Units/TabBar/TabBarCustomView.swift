@@ -11,19 +11,11 @@ struct TabBarCustomView: View {
     @Binding var selectedItem: Int
     
     @State private var items: [TabBar.Item] = [
-        .init(imageName: Asset.bicyclesTab.name,
-              title: "Rowery"),
-        .init(imageName: Asset.rentalTab.name,
-              title: "Wypożyczalnie"),
-        .init(imageName: Asset.catalogTab.name,
-              title: "Katalog"),
-        .init(imageName: Asset.settingsTab.name,
-              title: "Ustawienia")
+        .init(imageName: Asset.projectsTab.name),
+        .init(imageName: Asset.calculatorTab.name),
+        .init(imageName: Asset.reportingTab.name),
+        .init(imageName: Asset.tipsTab.name)
     ]
-    
-    private var arrange: [Int] {
-        Array(0..<items.count)
-    }
     
     private var bounds: CGRect {
         UIScreen.main.bounds
@@ -32,41 +24,30 @@ struct TabBarCustomView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundStyle(.white)
+                .foregroundStyle(Colors.darkBlue.swiftUIColor)
+                .cornerRadius(30, corners: [.topLeft, .topRight])
                 .overlay {
                     HStack {
-                        let arrange = (0..<items.count)
-                        ForEach(arrange, id: \.self) { index in
+                        ForEach(items.indices, id: \.self) { index in
                             let item = items[index]
                             let isSelected = index == selectedItem
                             
-                            VStack {
-                                Rectangle()
-                                    .foregroundStyle(Colors.darkBlue.swiftUIColor)
-                                    .cornerRadius(40, corners: [.bottomLeft, .bottomRight])
-                                    .frame(height: 4)
-                                    .opacity(isSelected ? 1 : 0)
-                                
-                                Spacer()
-                                
-                                VStack(spacing: 4) {
-                                    Image(item.imageName)
-                                        .renderingMode(.template)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 24)
-                                    
-                                    Text(item.title)
-                                        .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 10))
+                            Image(item.imageName)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 45, height: 45)
+                                .padding(10)
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(.white, lineWidth: 1)
+                                        .opacity(isSelected ? 1 : 0)
                                 }
-                                .foregroundStyle(
-                                    isSelected ? Colors.darkBlue.swiftUIColor : Colors.darkGrey.swiftUIColor
-                                )
-                                
+                                .onTapGesture {
+                                    selectedItem = index
+                                }
+                            
+                            if index < items.count - 1 {
                                 Spacer()
-                            }
-                            .onTapGesture {
-                                selectedItem = index
                             }
                         }
                     }

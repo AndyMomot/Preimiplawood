@@ -9,21 +9,20 @@ import Foundation
 
 extension TabBar {
     final class TabBarViewModel: ObservableObject {
-        @Published var selection = TabBarSelectionView.bicycles.rawValue
+        @Published var selection = TabBarSelectionView.projects.rawValue
     }
 }
 
 extension TabBar {
     enum TabBarSelectionView: Int {
-        case bicycles = 0
-        case rentals
-        case catalog
-        case settings
+        case projects = 0
+        case calculator
+        case reporting
+        case tips
     }
     
     struct Item: Identifiable {
         private(set) var id = UUID()
         var imageName: String
-        var title: String
     }
 }

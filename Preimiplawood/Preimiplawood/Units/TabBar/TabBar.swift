@@ -18,16 +18,16 @@ struct TabBar: View {
     var body: some View {
         TabView(selection: $viewModel.selection) {
             Text("Projects")
-                .tag(TabBarSelectionView.bicycles.rawValue)
+                .tag(TabBarSelectionView.projects.rawValue)
             
             Text("Calculator")
-                .tag(TabBarSelectionView.rentals.rawValue)
+                .tag(TabBarSelectionView.calculator.rawValue)
             
             Text("Reporting")
-                .tag(TabBarSelectionView.catalog.rawValue)
+                .tag(TabBarSelectionView.reporting.rawValue)
             
             Text("Tips")
-                .tag(TabBarSelectionView.settings.rawValue)
+                .tag(TabBarSelectionView.tips.rawValue)
         }
         .overlay {
             if showTabBar {
