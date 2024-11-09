@@ -106,7 +106,6 @@ private extension CustomNavigationView {
             // Create a new work item for the current search
             searchWorkItem = DispatchWorkItem {
                 onSearch?(query)
-                print(query)
             }
             
             // Schedule the work item to run after the delay
