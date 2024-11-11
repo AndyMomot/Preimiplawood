@@ -15,22 +15,29 @@ struct DynamicHeightTextField: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
             Text(title)
-                .foregroundStyle(.black)
-                .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 15))
+                .foregroundStyle(Colors.darkBlue.swiftUIColor)
+                .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 16))
             
             ZStack(alignment: .topLeading) {
                 RoundedRectangle(cornerRadius: 20)
                     .foregroundStyle(.white)
                 
                 TextEditor(text: $text)
-                    .foregroundStyle(.black)
-                    .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 15))
+                    .foregroundStyle(Colors.darkBlue.swiftUIColor)
+                    .font(Fonts.SFProDisplay.regular.swiftUIFont(size: 16))
                     .padding()
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(Colors.darkBlue.swiftUIColor, lineWidth: 1)
+                            .padding(2)
+                    }
+                
                 
                 if text.isEmpty {
                     Text(placeholder)
-                        
-                        .font(Fonts.SFProDisplay.regular.swiftUIFont(size: 15))
+                        .foregroundStyle(Colors.darkGrey.swiftUIColor)
+                        .font(Fonts.SFProDisplay.lightItalic.swiftUIFont(size: 16))
+                        .opacity(0.8)
                         .padding(.horizontal, 20)
                         .padding(.vertical, 26)
                         .allowsHitTesting(false)

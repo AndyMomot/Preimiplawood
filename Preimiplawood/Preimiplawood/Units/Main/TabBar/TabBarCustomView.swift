@@ -35,13 +35,13 @@ struct TabBarCustomView: View {
                             Image(item.imageName)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 45, height: 45)
                                 .padding(10)
                                 .overlay {
                                     RoundedRectangle(cornerRadius: 10)
                                         .stroke(.white, lineWidth: 1)
                                         .opacity(isSelected ? 1 : 0)
                                 }
+                                .padding(.top, 10)
                                 .onTapGesture {
                                     selectedItem = index
                                 }

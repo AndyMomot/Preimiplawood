@@ -10,6 +10,7 @@ import SwiftUI
 struct NavigationTitleView: View {
     var showBackButton: Bool = false
     var title: String
+    var color: Color = Colors.darkBlue.swiftUIColor
     
     @Environment(\.dismiss) private var dismiss
     
@@ -25,11 +26,13 @@ struct NavigationTitleView: View {
                 }
             }
             
-            Text(title)
+            if !title.isEmpty {
+                Text(title)
+            }
             
             Spacer()
         }
-        .foregroundStyle(Colors.darkBlue.swiftUIColor)
+        .foregroundStyle(color)
         .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 20))
         .navigationBarBackButtonHidden()
     }

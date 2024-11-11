@@ -17,7 +17,7 @@ struct TabBar: View {
     
     var body: some View {
         TabView(selection: $viewModel.selection) {
-            Text("Projects")
+            ProjectsView()
                 .tag(TabBarSelectionView.projects.rawValue)
             
             Text("Calculator")
@@ -34,7 +34,7 @@ struct TabBar: View {
                 VStack {
                     Spacer()
                     TabBarCustomView(selectedItem: $viewModel.selection)
-                        .frame(height: UIScreen.main.bounds.height * 0.1)
+                        .frame(height: UIScreen.main.bounds.height * 0.12)
                 }
                 .ignoresSafeArea(edges: .bottom)
             }

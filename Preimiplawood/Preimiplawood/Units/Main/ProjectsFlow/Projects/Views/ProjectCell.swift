@@ -12,7 +12,6 @@ struct ProjectCell: View {
     var onButton: (Bool) -> Void
     
     @State private var image = Asset.placeholder.swiftUIImage
-    @State private var accentColor = Colors.liteBlue.swiftUIColor
     
     private var bounds: CGRect {
         UIScreen.main.bounds
@@ -44,7 +43,9 @@ struct ProjectCell: View {
                             .font(Fonts.SFProDisplay.heavyItalic.swiftUIFont(size: 12))
                         
                         Text("do " + project.date.toString(format: .ddMMyy))
-                            .foregroundStyle(accentColor)
+                            .foregroundStyle(
+                                project.isDone ? Colors.greenCustom.swiftUIColor : Colors.liteBlue.swiftUIColor
+                            )
                             .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 12))
                     }
                     
@@ -53,7 +54,9 @@ struct ProjectCell: View {
                         onButton(project.isDone)
                     } label: {
                         Circle()
-                            .foregroundStyle(accentColor)
+                            .foregroundStyle(
+                                project.isDone ? Colors.greenCustom.swiftUIColor : Colors.liteBlue.swiftUIColor
+                            )
                             .frame(width: 64, height: 64)
                             .overlay {
                                 var image: Image {
@@ -77,7 +80,9 @@ struct ProjectCell: View {
                         .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 14))
                     Spacer(minLength: 10)
                     Text(project.isDone ? "Wykonany" : "W trakcie")
-                        .foregroundStyle(accentColor)
+                        .foregroundStyle(
+                            project.isDone ? Colors.greenCustom.swiftUIColor : Colors.liteBlue.swiftUIColor
+                        )
                         .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 12))
                 }
                 .padding(.trailing, 16)
@@ -93,12 +98,6 @@ struct ProjectCell: View {
             .resizable())
         .cornerRadius(25)
         .onAppear {
-            if project.isDone {
-                accentColor = Colors.greenCustom.swiftUIColor
-            } else {
-                accentColor = Colors.liteBlue.swiftUIColor
-            }
-            
             getImage()
         }
     }
