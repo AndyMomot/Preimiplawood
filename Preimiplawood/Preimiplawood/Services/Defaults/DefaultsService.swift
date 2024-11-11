@@ -23,11 +23,6 @@ extension DefaultsService {
         }
     }
     
-    var nickName: String? {
-        get { standard.string(forKey: Keys.nickName.rawValue) }
-        set { standard.set(newValue, forKey: Keys.nickName.rawValue) }
-    }
-    
     var projects: [ProjectModel] {
         get {
             guard let data = standard.object(forKey: Keys.projects.rawValue) as? Data,
@@ -39,6 +34,21 @@ extension DefaultsService {
         set {
             if let data = try? JSONEncoder().encode(newValue) {
                 standard.setValue(data, forKey: Keys.projects.rawValue)
+            }
+        }
+    }
+    
+    var profile: ProfileModel? {
+        get {
+            guard let data = standard.object(forKey: Keys.profile.rawValue) as? Data,
+                  let item = try? JSONDecoder().decode(ProfileModel.self, from: data) else {
+                return nil
+            }
+            return item
+        }
+        set {
+            if let data = try? JSONEncoder().encode(newValue) {
+                standard.setValue(data, forKey: Keys.profile.rawValue)
             }
         }
     }
@@ -56,7 +66,7 @@ extension DefaultsService {
 extension DefaultsService {
     enum Keys: String {
         case flow
-        case nickName
         case projects
+        case profile
     }
 }

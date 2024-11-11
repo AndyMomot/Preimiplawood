@@ -10,6 +10,7 @@ import Foundation
 extension TabBar {
     final class TabBarViewModel: ObservableObject {
         @Published var selection = TabBarSelectionView.projects.rawValue
+        @Published var showTabBar = true
     }
 }
 

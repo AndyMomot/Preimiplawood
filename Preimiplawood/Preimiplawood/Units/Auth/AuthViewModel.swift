@@ -14,7 +14,8 @@ extension AuthView {
         func saveNickName() {
             DispatchQueue.global().async { [weak self] in
                 guard let self else { return }
-                DefaultsService.shared.nickName = self.nickName
+                let profile = ProfileModel(userName: self.nickName)
+                DefaultsService.shared.profile = profile
             }
         }
         

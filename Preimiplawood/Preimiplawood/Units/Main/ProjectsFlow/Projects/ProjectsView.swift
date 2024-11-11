@@ -24,10 +24,27 @@ struct ProjectsView: View {
                     CustomNavigationView(
                         image: viewModel.userImage,
                         nickname: viewModel.nickname
-                    )
+                    ) { action in
+                        switch action {
+                        case .onProfile:
+                            viewModel.showProfile.toggle()
+                        case .onShowSearch:
+                            withAnimation {
+                                viewModel.showSearchField.toggle()
+                                if !viewModel.showSearchField {
+                                    viewModel.searchText.removeAll()
+                                }
+                            }
+                        }
+                    }
                     .frame(maxHeight: 90)
                     
                     VStack(spacing: 22) {
+                        if viewModel.showSearchField {
+                            SearchBar(text: $viewModel.searchText)
+                                .padding(.horizontal, 16)
+                        }
+                        
                         HStack {
                             Text("Twoje projekty")
                                 .foregroundStyle(Colors.darkBlue.swiftUIColor)
@@ -83,6 +100,7 @@ struct ProjectsView: View {
                 }
             }
             .onAppear {
+                viewModel.getImage()
                 viewModel.getProjects()
             }
             .navigationDestination(isPresented: $viewModel.showAddProject) {
@@ -98,6 +116,12 @@ struct ProjectsView: View {
             .navigationDestination(isPresented: $viewModel.showSuccessScreen) {
                 SuccessView(title: viewModel.successTitle,
                             message: viewModel.successMessage)
+            }
+            .navigationDestination(isPresented: $viewModel.showProfile) {
+                ProfileView()
+            }
+            .onChange(of: viewModel.searchText) { query in
+                viewModel.performSearchWithDelay(query: query)
             }
         }
     }

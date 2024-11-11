@@ -10,12 +10,7 @@ import SwiftUI
 struct CustomNavigationView: View {
     var image: UIImage
     var nickname: String
-    var showSearch: Bool = true
-    
-    var onSearch: ((String) -> Void)?
-    
-    @State private var showSearchField: Bool = false
-    @State private var searchText: String = ""
+    var action: ((Action) -> Void)?
     
     @State private var searchWorkItem: DispatchWorkItem?
     
@@ -36,6 +31,9 @@ struct CustomNavigationView: View {
                             .clipShape(Circle())
                             .clipped()
                     }
+                    .onTapGesture {
+                        action?(.onProfile)
+                    }
                     
                     // Nickname
                     Text("Dzień dobry, ")
@@ -49,9 +47,7 @@ struct CustomNavigationView: View {
                     
                     // Search
                     Button {
-                        withAnimation {
-                            showSearchField.toggle()
-                        }
+                        action?(.onShowSearch)
                     } label: {
                         Image(systemName: "magnifyingglass")
                             .resizable()
@@ -66,53 +62,17 @@ struct CustomNavigationView: View {
                 .padding(.bottom, 10)
                 .background(Colors.darkBlue.swiftUIColor)
                 .cornerRadius(30, corners: [.bottomLeft, .bottomRight])
-                
-                if showSearchField {
-                    HStack(spacing: 12) {
-                        Image(systemName: "magnifyingglass")
-                            .resizable()
-                            .foregroundStyle(Colors.darkGrey.swiftUIColor)
-                            .frame(width: 14, height:  14)
-                        
-                        TextField(text: $searchText) {
-                            Text("Szukaj")
-                                .foregroundStyle(Colors.darkGrey.swiftUIColor)
-                                .font(Fonts.SFProDisplay.lightItalic.swiftUIFont(size: 10))
-                        }
-                        .foregroundStyle(Colors.darkBlue.swiftUIColor)
-                        .font(Fonts.SFProDisplay.regular.swiftUIFont(size: 10))
-                    }
-                    .padding(12)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 18)
-                            .stroke(Colors.darkGrey.swiftUIColor, lineWidth: 1)
-                    }
-                    .padding(.horizontal, 16)
-                }
             }
             .ignoresSafeArea(edges: .top)
-            .onChange(of: searchText) { newValue in
-                performSearchWithDelay(query: newValue)
-            }
         }
     }
 }
 
-private extension CustomNavigationView {
-    func performSearchWithDelay(query: String) {
-            // Cancel any existing work item
-            searchWorkItem?.cancel()
-            
-            // Create a new work item for the current search
-            searchWorkItem = DispatchWorkItem {
-                onSearch?(query)
-            }
-            
-            // Schedule the work item to run after the delay
-            if let workItem = searchWorkItem {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: workItem)
-            }
-        }
+extension CustomNavigationView {
+    enum Action {
+        case onProfile
+        case onShowSearch
+    }
 }
 
 #Preview {

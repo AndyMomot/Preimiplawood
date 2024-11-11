@@ -64,6 +64,12 @@
 		476B01BE2CE201C10040A26F /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01BB2CE201C10040A26F /* AddProjectView.swift */; };
 		476B01BF2CE201C10040A26F /* AddProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01BC2CE201C10040A26F /* AddProjectViewModel.swift */; };
 		476B01C72CE21AD90040A26F /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01C52CE21AD90040A26F /* SuccessView.swift */; };
+		476B01D02CE23D400040A26F /* CalculationInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01CD2CE23D400040A26F /* CalculationInput.swift */; };
+		476B01D12CE23D400040A26F /* CalculationInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01CE2CE23D400040A26F /* CalculationInputViewModel.swift */; };
+		476B01D72CE23DBD0040A26F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01D52CE23DBD0040A26F /* SearchBar.swift */; };
+		476B01DB2CE2432B0040A26F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01DA2CE2432B0040A26F /* ProfileView.swift */; };
+		476B01DD2CE243310040A26F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01DC2CE243310040A26F /* ProfileViewModel.swift */; };
+		476B01DF2CE249C90040A26F /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01DE2CE249C90040A26F /* ProfileModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +131,12 @@
 		476B01BB2CE201C10040A26F /* AddProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectView.swift; sourceTree = "<group>"; };
 		476B01BC2CE201C10040A26F /* AddProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectViewModel.swift; sourceTree = "<group>"; };
 		476B01C52CE21AD90040A26F /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
+		476B01CD2CE23D400040A26F /* CalculationInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationInput.swift; sourceTree = "<group>"; };
+		476B01CE2CE23D400040A26F /* CalculationInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationInputViewModel.swift; sourceTree = "<group>"; };
+		476B01D52CE23DBD0040A26F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		476B01DA2CE2432B0040A26F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		476B01DC2CE243310040A26F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		476B01DE2CE249C90040A26F /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		477251D82CDBA2DE0030424D /* Preimiplawood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Preimiplawood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -236,6 +248,7 @@
 		476B01412CE1FB7D0040A26F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				476B01D62CE23DBD0040A26F /* SearchBar */,
 				476B01342CE1FB7D0040A26F /* CircularProgressBar */,
 				476B01362CE1FB7D0040A26F /* DynamicHeightTextField */,
 				476B01382CE1FB7D0040A26F /* InputField */,
@@ -261,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				476B01432CE1FB7D0040A26F /* ProjectModel.swift */,
+				476B01DE2CE249C90040A26F /* ProfileModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -384,6 +398,7 @@
 		476B01692CE1FB7D0040A26F /* ProjectsFlow */ = {
 			isa = PBXGroup;
 			children = (
+				476B01D92CE243250040A26F /* Profile */,
 				476B01682CE1FB7D0040A26F /* Projects */,
 				476B01BD2CE201C10040A26F /* AddProject */,
 			);
@@ -393,9 +408,10 @@
 		476B016A2CE1FB7D0040A26F /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				476B01C62CE21AD90040A26F /* Success */,
 				476B01792CE1FB7D0040A26F /* TabBar */,
+				476B01C62CE21AD90040A26F /* Success */,
 				476B01692CE1FB7D0040A26F /* ProjectsFlow */,
+				476B01CF2CE23D400040A26F /* CalculatorFlow */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -497,6 +513,32 @@
 				476B01C52CE21AD90040A26F /* SuccessView.swift */,
 			);
 			path = Success;
+			sourceTree = "<group>";
+		};
+		476B01CF2CE23D400040A26F /* CalculatorFlow */ = {
+			isa = PBXGroup;
+			children = (
+				476B01CD2CE23D400040A26F /* CalculationInput.swift */,
+				476B01CE2CE23D400040A26F /* CalculationInputViewModel.swift */,
+			);
+			path = CalculatorFlow;
+			sourceTree = "<group>";
+		};
+		476B01D62CE23DBD0040A26F /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				476B01D52CE23DBD0040A26F /* SearchBar.swift */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		476B01D92CE243250040A26F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				476B01DA2CE2432B0040A26F /* ProfileView.swift */,
+				476B01DC2CE243310040A26F /* ProfileViewModel.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		477251CF2CDBA2DE0030424D = {
@@ -633,11 +675,14 @@
 				476B01852CE1FB7D0040A26F /* String+Additions.swift in Sources */,
 				476B01862CE1FB7D0040A26F /* UINavigationController+Additions.swift in Sources */,
 				476B01872CE1FB7D0040A26F /* View+Additions.swift in Sources */,
+				476B01D02CE23D400040A26F /* CalculationInput.swift in Sources */,
+				476B01D12CE23D400040A26F /* CalculationInputViewModel.swift in Sources */,
 				476B01882CE1FB7D0040A26F /* ImagePicker.swift in Sources */,
 				476B01892CE1FB7D0040A26F /* ShareSheet.swift in Sources */,
 				476B018A2CE1FB7D0040A26F /* CircularProgressBar.swift in Sources */,
 				476B018B2CE1FB7D0040A26F /* DynamicHeightTextField.swift in Sources */,
 				476B018C2CE1FB7D0040A26F /* InputField.swift in Sources */,
+				476B01DF2CE249C90040A26F /* ProfileModel.swift in Sources */,
 				476B018D2CE1FB7D0040A26F /* NavigationTitleView.swift in Sources */,
 				476B018E2CE1FB7D0040A26F /* CustomNavigationView.swift in Sources */,
 				476B018F2CE1FB7D0040A26F /* NextButton.swift in Sources */,
@@ -645,6 +690,7 @@
 				476B01912CE1FB7D0040A26F /* ProjectModel.swift in Sources */,
 				476B01BE2CE201C10040A26F /* AddProjectView.swift in Sources */,
 				476B01BF2CE201C10040A26F /* AddProjectViewModel.swift in Sources */,
+				476B01DD2CE243310040A26F /* ProfileViewModel.swift in Sources */,
 				476B01922CE1FB7D0040A26F /* Colors.generated.swift in Sources */,
 				476B01932CE1FB7D0040A26F /* Fonts.generated.swift in Sources */,
 				476B01942CE1FB7D0040A26F /* Images.generated.swift in Sources */,
@@ -655,6 +701,7 @@
 				476B01992CE1FB7D0040A26F /* AuthView.swift in Sources */,
 				476B019A2CE1FB7D0040A26F /* AuthViewModel.swift in Sources */,
 				476B019B2CE1FB7D0040A26F /* ProjectCell.swift in Sources */,
+				476B01D72CE23DBD0040A26F /* SearchBar.swift in Sources */,
 				476B019C2CE1FB7D0040A26F /* ProjectsView.swift in Sources */,
 				476B019D2CE1FB7D0040A26F /* ProjectsViewModel.swift in Sources */,
 				476B019E2CE1FB7D0040A26F /* OnboardingView.swift in Sources */,
@@ -662,6 +709,7 @@
 				476B01C72CE21AD90040A26F /* SuccessView.swift in Sources */,
 				476B01A02CE1FB7D0040A26F /* OnboardingViewTabView.swift in Sources */,
 				476B01A12CE1FB7D0040A26F /* PreloaderView.swift in Sources */,
+				476B01DB2CE2432B0040A26F /* ProfileView.swift in Sources */,
 				476B01A22CE1FB7D0040A26F /* RootContentView.swift in Sources */,
 				476B01A32CE1FB7D0040A26F /* RootContentViewModel.swift in Sources */,
 				476B01A42CE1FB7D0040A26F /* TabBar.swift in Sources */,

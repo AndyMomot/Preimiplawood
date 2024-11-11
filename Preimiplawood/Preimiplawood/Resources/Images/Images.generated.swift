@@ -28,6 +28,7 @@ internal enum Asset {
   internal static let check = ImageAsset(name: "check")
   internal static let fingerUp = ImageAsset(name: "fingerUp")
   internal static let placeholder = ImageAsset(name: "placeholder")
+  internal static let profileBg = ImageAsset(name: "profileBg")
   internal static let projectBg = ImageAsset(name: "projectBg")
   internal static let successBg = ImageAsset(name: "successBg")
   internal static let onboardBg1 = ImageAsset(name: "onboardBg1")
