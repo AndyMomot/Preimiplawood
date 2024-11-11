@@ -10,9 +10,8 @@ import SwiftUI
 struct CustomNavigationView: View {
     var image: UIImage
     var nickname: String
+    var showSearch = true
     var action: ((Action) -> Void)?
-    
-    @State private var searchWorkItem: DispatchWorkItem?
     
     var body: some View {
         GeometryReader { geo in
@@ -46,16 +45,17 @@ struct CustomNavigationView: View {
                     Spacer()
                     
                     // Search
-                    Button {
-                        action?(.onShowSearch)
-                    } label: {
-                        Image(systemName: "magnifyingglass")
-                            .resizable()
-                            .foregroundStyle(.white)
-                            .frame(width: 24, height:  24)
+                    if showSearch {
+                        Button {
+                            action?(.onShowSearch)
+                        } label: {
+                            Image(systemName: "magnifyingglass")
+                                .resizable()
+                                .foregroundStyle(.white)
+                                .frame(width: 24, height:  24)
                             
+                        }
                     }
-
                 }
                 .padding(.top, geo.safeAreaInsets.top + 10)
                 .padding(.horizontal, 16)

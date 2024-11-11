@@ -20,7 +20,7 @@ struct TabBar: View {
                 .tag(TabBarSelectionView.projects.rawValue)
                 .environmentObject(viewModel)
             
-            Text("Calculator")
+            CalculationInput()
                 .tag(TabBarSelectionView.calculator.rawValue)
             
             Text("Reporting")

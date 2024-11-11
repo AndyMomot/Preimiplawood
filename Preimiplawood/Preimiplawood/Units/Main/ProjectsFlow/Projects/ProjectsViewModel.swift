@@ -11,7 +11,7 @@ import UIKit.UIImage
 extension ProjectsView {
     final class ViewModel: ObservableObject {
         @Published var userImage: UIImage = Asset.placeholder.image
-        @Published var nickname: String = DefaultsService.shared.profile?.userName ?? ""
+        @Published var nickname: String = ""
         @Published var showSearchField: Bool = false
         @Published var searchText: String = ""
         private var searchWorkItem: DispatchWorkItem?
@@ -25,11 +25,17 @@ extension ProjectsView {
         var successMessage: String = ""
         @Published var showSuccessScreen = false
         
-        func getImage() {
+        func getProfileData() {
             DispatchQueue.global().async { [weak self] in
-                guard let self, let id = DefaultsService.shared.profile?.id else { return }
+                guard let self,
+                      let profile = DefaultsService.shared.profile
+                else { return }
+                
+                DispatchQueue.main.async {
+                    self.nickname = profile.userName
+                }
                         
-                ImageStorageManager().fetchImage(with: id) { data in
+                ImageStorageManager().fetchImage(with: profile.id) { data in
                     guard let data,
                           let uiImage = UIImage(data: data)
                     else { return }

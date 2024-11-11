@@ -70,6 +70,10 @@
 		476B01DB2CE2432B0040A26F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01DA2CE2432B0040A26F /* ProfileView.swift */; };
 		476B01DD2CE243310040A26F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01DC2CE243310040A26F /* ProfileViewModel.swift */; };
 		476B01DF2CE249C90040A26F /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01DE2CE249C90040A26F /* ProfileModel.swift */; };
+		476B01E32CE264100040A26F /* CalculationTFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01E22CE264100040A26F /* CalculationTFView.swift */; };
+		476B01E62CE264380040A26F /* CalculationTFTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01E52CE264380040A26F /* CalculationTFTitleView.swift */; };
+		476B01E82CE26D3C0040A26F /* CalculationInputContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01E72CE26D3C0040A26F /* CalculationInputContentView.swift */; };
+		476B01EA2CE26EA40040A26F /* CalculationResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01E92CE26EA40040A26F /* CalculationResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +141,10 @@
 		476B01DA2CE2432B0040A26F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		476B01DC2CE243310040A26F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		476B01DE2CE249C90040A26F /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		476B01E22CE264100040A26F /* CalculationTFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationTFView.swift; sourceTree = "<group>"; };
+		476B01E52CE264380040A26F /* CalculationTFTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationTFTitleView.swift; sourceTree = "<group>"; };
+		476B01E72CE26D3C0040A26F /* CalculationInputContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationInputContentView.swift; sourceTree = "<group>"; };
+		476B01E92CE26EA40040A26F /* CalculationResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationResultView.swift; sourceTree = "<group>"; };
 		477251D82CDBA2DE0030424D /* Preimiplawood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Preimiplawood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -518,6 +526,7 @@
 		476B01CF2CE23D400040A26F /* CalculatorFlow */ = {
 			isa = PBXGroup;
 			children = (
+				476B01E12CE264050040A26F /* Views */,
 				476B01CD2CE23D400040A26F /* CalculationInput.swift */,
 				476B01CE2CE23D400040A26F /* CalculationInputViewModel.swift */,
 			);
@@ -539,6 +548,17 @@
 				476B01DC2CE243310040A26F /* ProfileViewModel.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		476B01E12CE264050040A26F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				476B01E22CE264100040A26F /* CalculationTFView.swift */,
+				476B01E52CE264380040A26F /* CalculationTFTitleView.swift */,
+				476B01E72CE26D3C0040A26F /* CalculationInputContentView.swift */,
+				476B01E92CE26EA40040A26F /* CalculationResultView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		477251CF2CDBA2DE0030424D = {
@@ -687,6 +707,8 @@
 				476B018E2CE1FB7D0040A26F /* CustomNavigationView.swift in Sources */,
 				476B018F2CE1FB7D0040A26F /* NextButton.swift in Sources */,
 				476B01902CE1FB7D0040A26F /* SwiftUIViewWebView.swift in Sources */,
+				476B01EA2CE26EA40040A26F /* CalculationResultView.swift in Sources */,
+				476B01E32CE264100040A26F /* CalculationTFView.swift in Sources */,
 				476B01912CE1FB7D0040A26F /* ProjectModel.swift in Sources */,
 				476B01BE2CE201C10040A26F /* AddProjectView.swift in Sources */,
 				476B01BF2CE201C10040A26F /* AddProjectViewModel.swift in Sources */,
@@ -695,6 +717,7 @@
 				476B01932CE1FB7D0040A26F /* Fonts.generated.swift in Sources */,
 				476B01942CE1FB7D0040A26F /* Images.generated.swift in Sources */,
 				476B01952CE1FB7D0040A26F /* DefaultsService.swift in Sources */,
+				476B01E62CE264380040A26F /* CalculationTFTitleView.swift in Sources */,
 				476B01962CE1FB7D0040A26F /* FileManagerService.swift in Sources */,
 				476B01972CE1FB7D0040A26F /* ImageStorageManager.swift in Sources */,
 				476B01982CE1FB7D0040A26F /* NotificationManager.swift in Sources */,
@@ -714,6 +737,7 @@
 				476B01A32CE1FB7D0040A26F /* RootContentViewModel.swift in Sources */,
 				476B01A42CE1FB7D0040A26F /* TabBar.swift in Sources */,
 				476B01A52CE1FB7D0040A26F /* TabBarCustomView.swift in Sources */,
+				476B01E82CE26D3C0040A26F /* CalculationInputContentView.swift in Sources */,
 				476B01A62CE1FB7D0040A26F /* TabBarViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

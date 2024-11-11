@@ -100,7 +100,7 @@ struct ProjectsView: View {
                 }
             }
             .onAppear {
-                viewModel.getImage()
+                viewModel.getProfileData()
                 viewModel.getProjects()
             }
             .navigationDestination(isPresented: $viewModel.showAddProject) {

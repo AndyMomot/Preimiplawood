@@ -28,11 +28,6 @@ struct NextButton: View {
                 
             }
             .cornerRadius(8, corners: .allCorners)
-            .overlay {
-                RoundedRectangle(cornerRadius: 8)
-                    .stroke(Colors.darkBlue.swiftUIColor, lineWidth: 1)
-            }
-            .padding(1)
             .shadow(color: Colors.darkBlue.swiftUIColor.opacity(0.1), radius: 8)
         }
     }
@@ -41,14 +36,14 @@ struct NextButton: View {
 extension NextButton {
     enum Style {
         case primary
-        case secondary(color: Color)
+        case secondary(txtColor: Color, bgColor: Color)
         
         var bgColor: Color {
             switch self {
             case .primary:
                 return Colors.darkBlue.swiftUIColor
-            case .secondary(let color):
-                return color
+            case .secondary(_, let bgColor):
+                return bgColor
             }
         }
         
@@ -56,8 +51,8 @@ extension NextButton {
             switch self {
             case .primary:
                 return .white
-            case .secondary:
-                return Colors.darkBlue.swiftUIColor
+            case .secondary(let textColor, _):
+                return textColor
             }
         }
     }
@@ -69,7 +64,7 @@ extension NextButton {
             NextButton(title: "Komputeryrerererer") {}
                 .frame(width: 200, height: 44)
             
-            NextButton(title: "Komputeryrerererer", style: .secondary(color: .white)) {}
+            NextButton(title: "Komputeryrerererer", style: .secondary(txtColor: .white, bgColor: .blue)) {}
                 .frame(width: 200, height: 44)
         }
     }
