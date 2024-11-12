@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ProjectCell: View {
     var project: ProjectModel
+    var showDelete = false
     var onButton: (Bool) -> Void
+    var onDelete: ((String) -> Void)?
     
     @State private var image = Asset.placeholder.swiftUIImage
     
@@ -78,12 +80,26 @@ struct ProjectCell: View {
                     Text(project.name)
                         .foregroundStyle(.black)
                         .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 14))
+                    
                     Spacer(minLength: 10)
+                    
                     Text(project.isDone ? "Wykonany" : "W trakcie")
                         .foregroundStyle(
                             project.isDone ? Colors.greenCustom.swiftUIColor : Colors.liteBlue.swiftUIColor
                         )
                         .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 12))
+                    
+                    Spacer(minLength: 10)
+                    
+                    if showDelete {
+                        Button {
+                            onDelete?(project.id)
+                        } label: {
+                            Image(systemName: "trash")
+                                .foregroundStyle(.red)
+                        }
+                    }
+
                 }
                 .padding(.trailing, 16)
             }

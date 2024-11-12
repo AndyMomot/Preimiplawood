@@ -1,25 +1,27 @@
 //
-//  ProjectsViewModel.swift
+//  ReportingViewModel.swift
 //  Preimiplawood
 //
-//  Created by Andrii Momot on 07.11.2024.
+//  Created by Andrii Momot on 12.11.2024.
 //
 
 import Foundation
 import UIKit.UIImage
 
-extension ProjectsView {
+extension ReportingView {
     final class ViewModel: ObservableObject {
+        @Published var showProfile = false
         @Published var userImage: UIImage = Asset.placeholder.image
         @Published var nickname: String = ""
+        
         @Published var showSearchField: Bool = false
         @Published var searchText: String = ""
         private var searchWorkItem: DispatchWorkItem?
         
-        @Published var showAddProject: Bool = false
         @Published var projects: [ProjectModel] = []
+        var projectIdToShow = ""
         
-        @Published var showProfile = false
+        @Published var showAddTransaction = false
         
         var successTitle: String = ""
         var successMessage: String = ""
@@ -72,17 +74,6 @@ extension ProjectsView {
             }
         }
         
-        func updateProjectCompletion(status: Bool, id: String) {
-            DispatchQueue.global().async { [weak self] in
-                guard let self else { return }
-                guard let index = DefaultsService.shared.projects.firstIndex(where: {
-                    $0.id == id
-                }) else { return }
-                DefaultsService.shared.projects[index].isDone = status
-                self.getProjects()
-            }
-        }
-        
         func performSearchWithDelay(query: String) {
             // Cancel any existing work item
             searchWorkItem?.cancel()
@@ -96,17 +87,6 @@ extension ProjectsView {
             // Schedule the work item to run after the delay
             if let workItem = searchWorkItem {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: workItem)
-            }
-        }
-        
-        func deleteProject(with id: String) {
-            DispatchQueue.global().async { [weak self] in
-                guard let self else { return }
-                guard let index = DefaultsService.shared.projects.firstIndex(where: {
-                    $0.id == id
-                }) else { return }
-                DefaultsService.shared.projects.remove(at: index)
-                self.getProjects()
             }
         }
     }

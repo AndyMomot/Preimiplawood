@@ -87,9 +87,16 @@ struct ProjectsView: View {
                         ScrollView {
                             VStack(spacing: 10) {
                                 ForEach(viewModel.projects) { project in
-                                    ProjectCell(project: project) { isDone in
-                                        viewModel.updateProjectCompletion(status: !isDone, id: project.id)
-                                    }
+                                    ProjectCell(
+                                        project: project,
+                                        showDelete: true,
+                                        onButton: { isDone in
+                                        viewModel.updateProjectCompletion(
+                                            status: !isDone,
+                                            id: project.id)
+                                    }, onDelete: { id in
+                                        viewModel.deleteProject(with: id)
+                                    })
                                 }
                             }
                             .padding(.horizontal, 16)

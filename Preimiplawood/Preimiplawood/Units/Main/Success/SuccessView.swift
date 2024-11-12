@@ -11,6 +11,8 @@ struct SuccessView: View {
     var title: String
     var message: String
     
+    @EnvironmentObject private var tabBarVM: TabBar.TabBarViewModel
+    
     var body: some View {
         ZStack {
             Color.white
@@ -49,6 +51,16 @@ struct SuccessView: View {
             .padding(.horizontal, 16)
         }
         .ignoresSafeArea()
+        .onAppear {
+            DispatchQueue.main.async {
+                tabBarVM.showTabBar = false
+            }
+        }
+        .onDisappear {
+            DispatchQueue.main.async {
+                tabBarVM.showTabBar = true
+            }
+        }
     }
 }
 

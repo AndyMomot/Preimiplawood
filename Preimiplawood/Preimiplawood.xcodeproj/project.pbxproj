@@ -74,6 +74,12 @@
 		476B01E62CE264380040A26F /* CalculationTFTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01E52CE264380040A26F /* CalculationTFTitleView.swift */; };
 		476B01E82CE26D3C0040A26F /* CalculationInputContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01E72CE26D3C0040A26F /* CalculationInputContentView.swift */; };
 		476B01EA2CE26EA40040A26F /* CalculationResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01E92CE26EA40040A26F /* CalculationResultView.swift */; };
+		476B01F82CE3499E0040A26F /* ReportingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01F52CE3499E0040A26F /* ReportingView.swift */; };
+		476B01F92CE3499E0040A26F /* ReportingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01F62CE3499E0040A26F /* ReportingViewModel.swift */; };
+		476B01FD2CE34DF80040A26F /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01FC2CE34DF80040A26F /* ReportCell.swift */; };
+		476B02062CE353D50040A26F /* AddTransactionVeiwModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B02032CE353D50040A26F /* AddTransactionVeiwModel.swift */; };
+		476B02072CE353D50040A26F /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B02042CE353D50040A26F /* AddTransactionView.swift */; };
+		476B020B2CE3571E0040A26F /* TransactionTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B020A2CE3571E0040A26F /* TransactionTypeButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,6 +151,12 @@
 		476B01E52CE264380040A26F /* CalculationTFTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationTFTitleView.swift; sourceTree = "<group>"; };
 		476B01E72CE26D3C0040A26F /* CalculationInputContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationInputContentView.swift; sourceTree = "<group>"; };
 		476B01E92CE26EA40040A26F /* CalculationResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationResultView.swift; sourceTree = "<group>"; };
+		476B01F52CE3499E0040A26F /* ReportingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingView.swift; sourceTree = "<group>"; };
+		476B01F62CE3499E0040A26F /* ReportingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingViewModel.swift; sourceTree = "<group>"; };
+		476B01FC2CE34DF80040A26F /* ReportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCell.swift; sourceTree = "<group>"; };
+		476B02032CE353D50040A26F /* AddTransactionVeiwModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionVeiwModel.swift; sourceTree = "<group>"; };
+		476B02042CE353D50040A26F /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
+		476B020A2CE3571E0040A26F /* TransactionTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTypeButton.swift; sourceTree = "<group>"; };
 		477251D82CDBA2DE0030424D /* Preimiplawood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Preimiplawood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -420,6 +432,7 @@
 				476B01C62CE21AD90040A26F /* Success */,
 				476B01692CE1FB7D0040A26F /* ProjectsFlow */,
 				476B01CF2CE23D400040A26F /* CalculatorFlow */,
+				476B01ED2CE349200040A26F /* ReportingFlow */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -561,6 +574,51 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		476B01ED2CE349200040A26F /* ReportingFlow */ = {
+			isa = PBXGroup;
+			children = (
+				476B01F72CE3499E0040A26F /* Reporting */,
+				476B02052CE353D50040A26F /* AddTransaction */,
+			);
+			path = ReportingFlow;
+			sourceTree = "<group>";
+		};
+		476B01F72CE3499E0040A26F /* Reporting */ = {
+			isa = PBXGroup;
+			children = (
+				476B01FB2CE34DE80040A26F /* Views */,
+				476B01F52CE3499E0040A26F /* ReportingView.swift */,
+				476B01F62CE3499E0040A26F /* ReportingViewModel.swift */,
+			);
+			path = Reporting;
+			sourceTree = "<group>";
+		};
+		476B01FB2CE34DE80040A26F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				476B01FC2CE34DF80040A26F /* ReportCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		476B02052CE353D50040A26F /* AddTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				476B02092CE357150040A26F /* Views */,
+				476B02042CE353D50040A26F /* AddTransactionView.swift */,
+				476B02032CE353D50040A26F /* AddTransactionVeiwModel.swift */,
+			);
+			path = AddTransaction;
+			sourceTree = "<group>";
+		};
+		476B02092CE357150040A26F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				476B020A2CE3571E0040A26F /* TransactionTypeButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		477251CF2CDBA2DE0030424D = {
 			isa = PBXGroup;
 			children = (
@@ -689,12 +747,15 @@
 			files = (
 				476B01802CE1FB7D0040A26F /* AppDelegate.swift in Sources */,
 				476B01812CE1FB7D0040A26F /* RootViewController.swift in Sources */,
+				476B020B2CE3571E0040A26F /* TransactionTypeButton.swift in Sources */,
 				476B01822CE1FB7D0040A26F /* SceneDelegate.swift in Sources */,
 				476B01832CE1FB7D0040A26F /* Date+Additions.swift in Sources */,
 				476B01842CE1FB7D0040A26F /* Double+Additions.swift in Sources */,
 				476B01852CE1FB7D0040A26F /* String+Additions.swift in Sources */,
 				476B01862CE1FB7D0040A26F /* UINavigationController+Additions.swift in Sources */,
 				476B01872CE1FB7D0040A26F /* View+Additions.swift in Sources */,
+				476B02062CE353D50040A26F /* AddTransactionVeiwModel.swift in Sources */,
+				476B02072CE353D50040A26F /* AddTransactionView.swift in Sources */,
 				476B01D02CE23D400040A26F /* CalculationInput.swift in Sources */,
 				476B01D12CE23D400040A26F /* CalculationInputViewModel.swift in Sources */,
 				476B01882CE1FB7D0040A26F /* ImagePicker.swift in Sources */,
@@ -708,12 +769,15 @@
 				476B018F2CE1FB7D0040A26F /* NextButton.swift in Sources */,
 				476B01902CE1FB7D0040A26F /* SwiftUIViewWebView.swift in Sources */,
 				476B01EA2CE26EA40040A26F /* CalculationResultView.swift in Sources */,
+				476B01F82CE3499E0040A26F /* ReportingView.swift in Sources */,
+				476B01F92CE3499E0040A26F /* ReportingViewModel.swift in Sources */,
 				476B01E32CE264100040A26F /* CalculationTFView.swift in Sources */,
 				476B01912CE1FB7D0040A26F /* ProjectModel.swift in Sources */,
 				476B01BE2CE201C10040A26F /* AddProjectView.swift in Sources */,
 				476B01BF2CE201C10040A26F /* AddProjectViewModel.swift in Sources */,
 				476B01DD2CE243310040A26F /* ProfileViewModel.swift in Sources */,
 				476B01922CE1FB7D0040A26F /* Colors.generated.swift in Sources */,
+				476B01FD2CE34DF80040A26F /* ReportCell.swift in Sources */,
 				476B01932CE1FB7D0040A26F /* Fonts.generated.swift in Sources */,
 				476B01942CE1FB7D0040A26F /* Images.generated.swift in Sources */,
 				476B01952CE1FB7D0040A26F /* DefaultsService.swift in Sources */,

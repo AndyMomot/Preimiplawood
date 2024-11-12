@@ -26,6 +26,8 @@ struct SearchBar: View {
             .font(Fonts.SFProDisplay.regular.swiftUIFont(size: 10))
         }
         .padding(12)
+        .background(.white)
+        .cornerRadius(18)
         .overlay {
             RoundedRectangle(cornerRadius: 18)
                 .stroke(Colors.darkGrey.swiftUIColor, lineWidth: 1)
@@ -34,5 +36,11 @@ struct SearchBar: View {
 }
 
 #Preview {
-    SearchBar(text: .constant(""))
+    ZStack {
+        Asset.addProjectBg.swiftUIImage
+            .resizable()
+        
+        SearchBar(text: .constant(""))
+            .padding()
+    }
 }

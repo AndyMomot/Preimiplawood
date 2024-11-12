@@ -13,4 +13,19 @@ struct ProjectModel: Codable, Identifiable {
     var date: Date
     var price: Int
     var isDone: Bool
+    
+    var income: [Int] = []
+    var costs: [Int] = []
+    
+    var totalIncome: Int {
+        income.reduce(0) {$0 + $1}
+    }
+    
+    var totalCosts: Int {
+        costs.reduce(0) {$0 + $1}
+    }
+    
+    var profit: Int {
+        totalIncome - totalCosts
+    }
 }
