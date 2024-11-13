@@ -37,20 +37,23 @@ struct CalculationInput: View {
                     .padding(.horizontal, 16)
                     
                     ScrollView {
-                        if viewModel.isInputState {
-                            CalculationInputContentView(
-                                titles: viewModel.titles,
-                                materialCostsValue: $viewModel.materialCostsValue,
-                                wastedTimeValue: $viewModel.wastedTimeValue,
-                                toolCostsValue: $viewModel.toolCostsValue,
-                                equipmentCostsValue: $viewModel.equipmentCostsValue) {
-                                    viewModel.onCalculate()
+                        Group {
+                            if viewModel.isInputState {
+                                CalculationInputContentView(
+                                    titles: viewModel.titles,
+                                    materialCostsValue: $viewModel.materialCostsValue,
+                                    wastedTimeValue: $viewModel.wastedTimeValue,
+                                    toolCostsValue: $viewModel.toolCostsValue,
+                                    equipmentCostsValue: $viewModel.equipmentCostsValue) {
+                                        viewModel.onCalculate()
+                                    }
+                            } else {
+                                CalculationResultView(amount: viewModel.calculationAmount) { isReset in
+                                    viewModel.handleCalculationResult(isReset: isReset)
                                 }
-                        } else {
-                            CalculationResultView(amount: viewModel.calculationAmount) { isReset in
-                                viewModel.handleCalculationResult(isReset: isReset)
                             }
                         }
+                        .padding(.bottom, UIScreen.main.bounds.height * 0.1)
                     }
                     .scrollIndicators(.hidden)
                 }
