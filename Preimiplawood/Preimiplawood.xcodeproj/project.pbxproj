@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4735A1DF2CE4A3D80093875E /* TipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4735A1DE2CE4A3D80093875E /* TipModel.swift */; };
+		4735A1EB2CE4A8FF0093875E /* TipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4735A1E52CE4A8FF0093875E /* TipCell.swift */; };
+		4735A1EC2CE4A8FF0093875E /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4735A1E72CE4A8FF0093875E /* TipsView.swift */; };
+		4735A1ED2CE4A8FF0093875E /* TipsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4735A1E82CE4A8FF0093875E /* TipsViewModel.swift */; };
+		4735A1F62CE4AFCF0093875E /* TipDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4735A1F32CE4AFCF0093875E /* TipDetailsView.swift */; };
+		4735A1F72CE4AFCF0093875E /* TipDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4735A1F42CE4AFCF0093875E /* TipDetailsViewModel.swift */; };
+		4735A1FD2CE4B2AF0093875E /* TipDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4735A1FB2CE4B2AF0093875E /* TipDescriptionCell.swift */; };
 		475D7EDF2CDBB9D2004DF155 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 475D7EDE2CDBB9D2004DF155 /* swiftgen.yml */; };
 		476B01802CE1FB7D0040A26F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01252CE1FB7D0040A26F /* AppDelegate.swift */; };
 		476B01812CE1FB7D0040A26F /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476B01262CE1FB7D0040A26F /* RootViewController.swift */; };
@@ -83,6 +90,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4735A1DE2CE4A3D80093875E /* TipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipModel.swift; sourceTree = "<group>"; };
+		4735A1E52CE4A8FF0093875E /* TipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCell.swift; sourceTree = "<group>"; };
+		4735A1E72CE4A8FF0093875E /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
+		4735A1E82CE4A8FF0093875E /* TipsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewModel.swift; sourceTree = "<group>"; };
+		4735A1F32CE4AFCF0093875E /* TipDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDetailsView.swift; sourceTree = "<group>"; };
+		4735A1F42CE4AFCF0093875E /* TipDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDetailsViewModel.swift; sourceTree = "<group>"; };
+		4735A1FB2CE4B2AF0093875E /* TipDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDescriptionCell.swift; sourceTree = "<group>"; };
 		475D7EDE2CDBB9D2004DF155 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		476B01252CE1FB7D0040A26F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		476B01262CE1FB7D0040A26F /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +185,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4735A1E62CE4A8FF0093875E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4735A1E52CE4A8FF0093875E /* TipCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4735A1E92CE4A8FF0093875E /* Tips */ = {
+			isa = PBXGroup;
+			children = (
+				4735A1E62CE4A8FF0093875E /* Views */,
+				4735A1E72CE4A8FF0093875E /* TipsView.swift */,
+				4735A1E82CE4A8FF0093875E /* TipsViewModel.swift */,
+			);
+			path = Tips;
+			sourceTree = "<group>";
+		};
+		4735A1EA2CE4A8FF0093875E /* TipsFlow */ = {
+			isa = PBXGroup;
+			children = (
+				4735A1E92CE4A8FF0093875E /* Tips */,
+				4735A1F52CE4AFCF0093875E /* TipDetails */,
+			);
+			path = TipsFlow;
+			sourceTree = "<group>";
+		};
+		4735A1F52CE4AFCF0093875E /* TipDetails */ = {
+			isa = PBXGroup;
+			children = (
+				4735A1FC2CE4B2AF0093875E /* Views */,
+				4735A1F32CE4AFCF0093875E /* TipDetailsView.swift */,
+				4735A1F42CE4AFCF0093875E /* TipDetailsViewModel.swift */,
+			);
+			path = TipDetails;
+			sourceTree = "<group>";
+		};
+		4735A1FC2CE4B2AF0093875E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4735A1FB2CE4B2AF0093875E /* TipDescriptionCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		476B01282CE1FB7D0040A26F /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +354,7 @@
 			children = (
 				476B01432CE1FB7D0040A26F /* ProjectModel.swift */,
 				476B01DE2CE249C90040A26F /* ProfileModel.swift */,
+				4735A1DE2CE4A3D80093875E /* TipModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -433,6 +493,7 @@
 				476B01692CE1FB7D0040A26F /* ProjectsFlow */,
 				476B01CF2CE23D400040A26F /* CalculatorFlow */,
 				476B01ED2CE349200040A26F /* ReportingFlow */,
+				4735A1EA2CE4A8FF0093875E /* TipsFlow */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -750,6 +811,7 @@
 				476B020B2CE3571E0040A26F /* TransactionTypeButton.swift in Sources */,
 				476B01822CE1FB7D0040A26F /* SceneDelegate.swift in Sources */,
 				476B01832CE1FB7D0040A26F /* Date+Additions.swift in Sources */,
+				4735A1FD2CE4B2AF0093875E /* TipDescriptionCell.swift in Sources */,
 				476B01842CE1FB7D0040A26F /* Double+Additions.swift in Sources */,
 				476B01852CE1FB7D0040A26F /* String+Additions.swift in Sources */,
 				476B01862CE1FB7D0040A26F /* UINavigationController+Additions.swift in Sources */,
@@ -780,6 +842,11 @@
 				476B01FD2CE34DF80040A26F /* ReportCell.swift in Sources */,
 				476B01932CE1FB7D0040A26F /* Fonts.generated.swift in Sources */,
 				476B01942CE1FB7D0040A26F /* Images.generated.swift in Sources */,
+				4735A1EB2CE4A8FF0093875E /* TipCell.swift in Sources */,
+				4735A1F62CE4AFCF0093875E /* TipDetailsView.swift in Sources */,
+				4735A1F72CE4AFCF0093875E /* TipDetailsViewModel.swift in Sources */,
+				4735A1EC2CE4A8FF0093875E /* TipsView.swift in Sources */,
+				4735A1ED2CE4A8FF0093875E /* TipsViewModel.swift in Sources */,
 				476B01952CE1FB7D0040A26F /* DefaultsService.swift in Sources */,
 				476B01E62CE264380040A26F /* CalculationTFTitleView.swift in Sources */,
 				476B01962CE1FB7D0040A26F /* FileManagerService.swift in Sources */,
@@ -793,6 +860,7 @@
 				476B019D2CE1FB7D0040A26F /* ProjectsViewModel.swift in Sources */,
 				476B019E2CE1FB7D0040A26F /* OnboardingView.swift in Sources */,
 				476B019F2CE1FB7D0040A26F /* OnboardingViewModel.swift in Sources */,
+				4735A1DF2CE4A3D80093875E /* TipModel.swift in Sources */,
 				476B01C72CE21AD90040A26F /* SuccessView.swift in Sources */,
 				476B01A02CE1FB7D0040A26F /* OnboardingViewTabView.swift in Sources */,
 				476B01A12CE1FB7D0040A26F /* PreloaderView.swift in Sources */,

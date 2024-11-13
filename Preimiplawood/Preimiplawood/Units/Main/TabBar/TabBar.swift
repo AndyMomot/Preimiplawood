@@ -27,8 +27,9 @@ struct TabBar: View {
                 .tag(TabBarSelectionView.reporting.rawValue)
                 .environmentObject(viewModel)
             
-            Text("Tips")
+            TipsView()
                 .tag(TabBarSelectionView.tips.rawValue)
+                .environmentObject(viewModel)
         }
         .overlay {
             if viewModel.showTabBar {

@@ -125,7 +125,11 @@ struct ProfileView: View {
         .onAppear {
             viewModel.getProfile()
             viewModel.getProjects()
-            tabBarViewModel.showTabBar = false
+            DispatchQueue.main.async {
+                withAnimation {
+                    tabBarViewModel.showTabBar = false
+                }
+            }
         }
         .onChange(of: viewModel.profile) { _ in
             viewModel.getImage()
@@ -134,7 +138,11 @@ struct ProfileView: View {
             viewModel.saveImage()
         }
         .onDisappear {
-            tabBarViewModel.showTabBar = true
+            DispatchQueue.main.async {
+                withAnimation {
+                    tabBarViewModel.showTabBar = true
+                }
+            }
         }
     }
 }

@@ -53,12 +53,16 @@ struct SuccessView: View {
         .ignoresSafeArea()
         .onAppear {
             DispatchQueue.main.async {
-                tabBarVM.showTabBar = false
+                withAnimation {
+                    tabBarVM.showTabBar = false
+                }
             }
         }
         .onDisappear {
             DispatchQueue.main.async {
-                tabBarVM.showTabBar = true
+                withAnimation {
+                    tabBarVM.showTabBar = true
+                }
             }
         }
     }
